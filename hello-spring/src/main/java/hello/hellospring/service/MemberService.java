@@ -3,17 +3,21 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 // service 는 비즈니스를 처리하는 role 이므로 네이밍 처리 또한 비즈니스용어로 사용
+
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
     // 테스트 케이스에서도 동일하게 new 로 불러오니 생성자로 변경
     // Dependency Injection (DI) : memberRepository 를 외부에서 넣어줌
+
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
